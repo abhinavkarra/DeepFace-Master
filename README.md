@@ -44,13 +44,13 @@ result = DeepFace.verify(
     img1_path="person1.jpg",
     img2_path="person2.jpg",
     model_name="VGG-Face",      # VGG-Face, Facenet, OpenFace, DeepFace, DeepID, 
-                                 # ArcFace, Dlib, SFace, GhostFaceNet, Buffalo_L, QMAG
+                                 # QMAG, Dlib, SFace, GhostFaceNet, Buffalo_L
     detector_backend="retinaface", # opencv, ssd, mtcnn, retinaface, mediapipe, 
                                    # dlib, yolo, yunet, centerface
     distance_metric="cosine",    # cosine, euclidean, euclidean_l2
     enforce_detection=True,      # Raise error if no face detected
     align=True,                  # Align faces before recognition
-    normalization="base"         # base, raw, Facenet, VGGFace, ArcFace
+    normalization="base"         # base, raw, Facenet, VGGFace, QMAG
 )
 
 # Returns:
@@ -73,7 +73,7 @@ result = DeepFace.verify(
 results = DeepFace.find(
     img_path="target.jpg",
     db_path="face_database/",
-    model_name="ArcFace",
+    model_name="QMAG",
     detector_backend="retinaface",
     distance_metric="cosine",
     enforce_detection=True,
@@ -138,7 +138,7 @@ embedding = DeepFace.represent(
 # - OpenFace: 128
 # - DeepFace: 4096
 # - DeepID: 160
-# - ArcFace: 512
+# - QMAG: 512
 # - Dlib: 128
 # - SFace: 128
 # - GhostFaceNet: 512
@@ -190,7 +190,7 @@ faces = DeepFace.extract_faces(
 | **VGG-Face** | 2,622 | 98.95% | Medium | General purpose |
 | **Facenet** | 128 | 99.65% | Fast | Production systems |
 | **Facenet512** | 512 | 99.65% | Fast | High accuracy |
-| **ArcFace** | 512 | 99.82% | Fast | State-of-the-art |
+| **QMAG** | 512 | 99.82% | Fast | State-of-the-art |
 | **OpenFace** | 128 | 92.92% | Very Fast | Edge devices |
 | **DeepFace** | 4,096 | 97.35% | Slow | Research |
 | **DeepID** | 160 | 97.45% | Fast | Mobile apps |
@@ -494,7 +494,7 @@ retina-face>=0.0.14
 ## Performance Tips
 
 1. **Use GPU**: Install `tensorflow-gpu` for 10x speedup
-2. **Choose Right Model**: Facenet/ArcFace for speed, VGG-Face for accuracy
+2. **Choose Right Model**: Facenet/QMAG for speed, VGG-Face for accuracy
 3. **Detector Selection**: Use `opencv` for speed, `retinaface` for accuracy
 4. **Batch Processing**: Process multiple frames before analysis
 5. **Frame Skipping**: In video, process every Nth frame
