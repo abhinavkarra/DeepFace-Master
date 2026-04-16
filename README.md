@@ -3,9 +3,6 @@
 > **Production-ready face recognition & analysis API for Python**  
 > 11 recognition models • 10+ detectors • Real-time streaming • Database integration
 
-[![Python 3.7+](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/abhinavkarra/DeepFace-Master/pulls)
 
 ---
 
